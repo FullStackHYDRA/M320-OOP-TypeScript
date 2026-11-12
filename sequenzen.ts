@@ -1,4 +1,7 @@
+export { };
+
 abstract class Sequence {
+
     abstract size(): number;
     abstract add(value: string): void;
     abstract get(): string;
@@ -32,7 +35,7 @@ class Stack extends Sequence {
     }
 
     add(value: string): void {
-        this.items.push(value); // oben drauflegen
+        this.items.push(value);
     }
 
     get(): string {
@@ -44,28 +47,9 @@ class Stack extends Sequence {
     }
 }
 
-const queue: Sequence = new Queue();
-const stack: Sequence = new Stack();
-
-for (const employee of ["Alice", "Bob", "Mallory"]) {
-    queue.add(employee);
-    stack.add(employee);
-}
-while (queue.size() > 0) {
-    console.log("next in line: " + queue.get());
-}
-while (stack.size() > 0) {
-    console.log("topmost of stack: " + stack.get());
-}
-
 class Mixer extends Sequence {
-    items: any;
-    size(): number {
-        throw new Error("Method not implemented.");
-    }
-    add(value: string): void {
-        throw new Error("Method not implemented.");
-    }
+
+    private items: string[] = [];
     get(): string {
         if (this.items.length === 0) {
             throw new Error("Mixer is empty");
@@ -75,11 +59,24 @@ class Mixer extends Sequence {
     }
 }
 
+const queue: Sequence = new Queue();
+const stack: Sequence = new Stack();
 const mixer: Sequence = new Mixer();
 
 for (const employee of ["Alice", "Bob", "Mallory", "Hans-Peter", "Köbi"]) {
+    queue.add(employee);
+    stack.add(employee);
     mixer.add(employee);
 }
+
+while (queue.size() > 0) {
+    console.log("next in line: " + queue.get());
+}
+
+while (stack.size() > 0) {
+    console.log("topmost of stack: " + stack.get());
+}
+
 while (mixer.size() > 0) {
     console.log("random pick: " + mixer.get());
 }
