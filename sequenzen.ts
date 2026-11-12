@@ -57,3 +57,29 @@ while (queue.size() > 0) {
 while (stack.size() > 0) {
     console.log("topmost of stack: " + stack.get());
 }
+
+class Mixer extends Sequence {
+    items: any;
+    size(): number {
+        throw new Error("Method not implemented.");
+    }
+    add(value: string): void {
+        throw new Error("Method not implemented.");
+    }
+    get(): string {
+        if (this.items.length === 0) {
+            throw new Error("Mixer is empty");
+        }
+        const index = Math.floor(Math.random() * this.items.length);
+        return this.items.splice(index, 1)[0];
+    }
+}
+
+const mixer: Sequence = new Mixer();
+
+for (const employee of ["Alice", "Bob", "Mallory", "Hans-Peter", "Köbi"]) {
+    mixer.add(employee);
+}
+while (mixer.size() > 0) {
+    console.log("random pick: " + mixer.get());
+}
