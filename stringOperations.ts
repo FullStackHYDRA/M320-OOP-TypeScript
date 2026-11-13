@@ -1,3 +1,5 @@
+import { Stack } from "./sequenzen";
+
 abstract class StringOperation {
     abstract perform(s: string): string;
 
@@ -84,3 +86,7 @@ class Prefixer extends StringOperation {
         return this.prefix + s;
     }
 }
+
+console.log(StringOperation.run([
+    new Prefixer("piç")
+], "weber"));

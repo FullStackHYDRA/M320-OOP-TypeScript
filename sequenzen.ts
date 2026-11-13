@@ -1,5 +1,3 @@
-export { };
-
 abstract class Sequence {
 
     abstract size(): number;
@@ -27,7 +25,7 @@ class Queue extends Sequence {
     }
 }
 
-class Stack extends Sequence {
+export class Stack extends Sequence {
     private items: string[] = [];
 
     size(): number {
@@ -48,6 +46,12 @@ class Stack extends Sequence {
 }
 
 class Mixer extends Sequence {
+    size() {
+        return 0;
+    }
+    add(value: string): void {
+
+    }
 
     private items: string[] = [];
     get(): string {
