@@ -6,4 +6,8 @@ abstract class Statistics {
     public addAll(xs: number[]) {
         this.ns.push(...xs);
     }
+    public get numbers() {
+        return this.ns;
+    }
+    public abstract compute(): number;
 }
