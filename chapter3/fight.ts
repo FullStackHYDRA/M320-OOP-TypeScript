@@ -21,7 +21,7 @@ class Fight {
             console.log(`Status ${this.playerTwo.name}: HP = ${Math.max(0, this.playerTwo.health).toFixed(1)}`);
 
             if (this.playerTwo.health <= 0) {
-                console.log(`\n🏆 ${this.playerOne.name} gewinnt den Kampf!`);
+                console.log(`\n ${this.playerOne.name} wins!`);
                 return this.playerOne;
             }
 
@@ -29,7 +29,7 @@ class Fight {
             console.log(`Status ${this.playerOne.name}: HP = ${Math.max(0, this.playerOne.health).toFixed(1)}`);
 
             if (this.playerOne.health <= 0) {
-                console.log(`\n🏆 ${this.playerTwo.name} gewinnt den Kampf!`);
+                console.log(`\n ${this.playerTwo.name} wins!`);
                 return this.playerTwo;
             }
 
