@@ -28,3 +28,15 @@ export class Cylinder extends Circle {
         return `${super.describe()} and Hight ${this.Height}`;
     }
 }
+
+const cyl = new Cylinder(0, 0, 3, 10, "Cylinder 1");
+
+console.log("Name:", cyl.name);
+console.log("Center:", cyl.x, cyl.y);
+console.log("Radius:", cyl.radius);
+console.log("Area A_circle:", cyl.area().toFixed(2));
+
+console.log("Height (expected 10):", cyl.height);
+console.log("Surface Area (Formula from Task):", cyl.surface().toFixed(2));
+console.log("Volume V (expected ~282.74):", cyl.volume().toFixed(2));
+console.log("Description: ", cyl.describe());
