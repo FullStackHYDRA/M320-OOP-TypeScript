@@ -1,0 +1,1 @@
+type PointSystem = "FIS" | "FIA";
