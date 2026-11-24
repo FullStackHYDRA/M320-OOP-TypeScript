@@ -36,3 +36,15 @@ class Triangle {
         );
     }
 }
+
+const pA = new Point2D(0, 0);
+const pB = new Point2D(3, 0);
+const pC = new Point2D(3, 4);
+
+const triangle = new Triangle(pA, pB, pC);
+
+console.log("Side AB (expected 3):", triangle.sideLength("A", "B"));
+console.log("Side BC (expected 4):", triangle.sideLength("B", "C"));
+console.log("Side CA (expected 5):", triangle.sideLength("C", "A"));
+console.log("Side BA (expected 3):", triangle.sideLength("B", "A"));
+console.log("Circumference (expected 12):", triangle.circumference);
