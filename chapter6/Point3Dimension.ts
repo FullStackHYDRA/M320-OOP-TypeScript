@@ -39,3 +39,16 @@ export class Point3D extends NamedPoint2D {
         return `Distance in 2Dimensions of ${this.describe()} to ${other.describe()} is about ${d.toFixed(2)}.`;
     }
 }
+
+const p3dA = new Point3D(0, 0, 0, "Start position 3D");
+const p3dB = new Point3D(2, 3, 6, "End position 3D");
+const p2d = new NamedPoint2D(3, 4, "Point A 2D");
+
+console.log("z-Coordinate: ", p3dB.z);
+console.log("Describtion: ", p3dB.describe());
+
+console.log("Distance with 3D: ", p3dA.distanceTo(p3dB));
+console.log(p3dA.describeDistanceTo(p3dB));
+
+console.log("Distance with only 2D: ", p3dA.distanceTo(p2d));
+console.log(p3dA.describeDistanceTo(p2d));
