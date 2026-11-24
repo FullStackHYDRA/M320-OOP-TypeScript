@@ -79,7 +79,7 @@ const pA = new Point3D(0, 0, 0);
 const pB = new Point3D(3, 0, 0);
 const pC = new Point3D(3, 4, 0);
 const triangle3D = new Triangle(pA, pB, pC);
-console.log("Seite CA (expected 5):", triangle3D.sideLength("C", "A"));
+console.log("Side CA (expected 5):", triangle3D.sideLength("C", "A"));
 console.log("Circumference (expected 12):", triangle3D.circumference);
 
 console.log("\n--- Testing Sphere ---");
