@@ -32,3 +32,16 @@ export class Stack extends Sequence {
         return item;
     }
 }
+
+export class Mixer extends Sequence {
+    public override get(): string {
+        if (this.items.length === 0) {
+            throw new Error("Mixer ist leer.");
+        }
+
+        const randomIndex = Math.floor(Math.random() * this.items.length);
+
+        const [removedItem] = this.items.splice(randomIndex, 1);
+        return removedItem;
+    }
+}
