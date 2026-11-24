@@ -69,3 +69,21 @@ export class Sphere {
         return 4 * Math.PI * (this.r ** 2);
     }
 }
+console.log("--- Testing Point3D ---");
+const p1 = new Point3D(0, 0, 0);
+const p2 = new Point3D(2, 3, 6);
+console.log("Distance p1 to p2 (expected 7):", p1.distanceTo(p2));
+
+console.log("\n--- Testin Triangle in 3D ---");
+const pA = new Point3D(0, 0, 0);
+const pB = new Point3D(3, 0, 0);
+const pC = new Point3D(3, 4, 0);
+const triangle3D = new Triangle(pA, pB, pC);
+console.log("Seite CA (expected 5):", triangle3D.sideLength("C", "A"));
+console.log("Circumference (expected 12):", triangle3D.circumference);
+
+console.log("\n--- Testing Sphere ---");
+const sphere = new Sphere(new Point3D(1, 2, 3), 3);
+console.log("Volume by r = 3 (expected ~113.10):", sphere.volume.toFixed(2));
+sphere.scale(2);
+console.log("Volume with scale(2) by r = 6 (expected ~904.78):", sphere.volume.toFixed(2));
