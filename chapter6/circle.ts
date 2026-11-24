@@ -28,3 +28,16 @@ export class Circle extends NamedPoint2D {
         return `${super.describe()} with Radius ${this.Radius}`;
     }
 }
+
+const c1 = new Circle(2, 3, 5, "Circle 1");
+const c2 = new Circle(5, 7, 10, "Circle 2");
+
+console.log("Name:", c1.name);                    // "Circle 1"
+console.log("Center: ", c1.x, c1.y);          // 2, 3
+console.log("Describtion: ", c1.describe());      // "Circle 1 (2, 3) with Radius 5"
+console.log("Distance to center: ", c1.distanceTo(c2)); // 5
+
+console.log("Radius (expected 5):", c1.radius);
+console.log("Duiameter (expected 10):", c1.diameter());
+console.log("Circumference (expected ~31.42):", c1.circumference().toFixed(2));
+console.log("Area (expected ~78.54):", c1.area().toFixed(2));
