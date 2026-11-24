@@ -1,4 +1,4 @@
-import { Statistics } from "./Statistics";
+import { Statistics } from "./Statistics.ts";
 
 class Mean extends Statistics {
     public compute(): number {
