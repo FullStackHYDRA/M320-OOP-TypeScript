@@ -12,3 +12,13 @@ export abstract class Sequence {
 
     public abstract get(): string;
 }
+
+export class Queue extends Sequence {
+    public override get(): string {
+        const item = this.items.shift();
+        if (item === undefined) {
+            throw new Error("Queue ist leer.");
+        }
+        return item;
+    }
+}
