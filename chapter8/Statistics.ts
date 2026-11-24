@@ -1,4 +1,4 @@
-abstract class Statistics {
+export abstract class Statistics {
     private ns: number[] = [];
     public add(x: number) {
         this.ns.push(x);
