@@ -46,3 +46,19 @@ export class Rectangle {
         return this.AB * this.BC;
     }
 }
+const pointA = new NamedPoint2D(1, 2, "A");
+const pointC = new NamedPoint2D(5, 5, "C");
+
+const rect = new Rectangle(pointA, pointC);
+
+console.log("Corner A:", rect.A.describe()); // "A (1, 2)"
+console.log("Corner B:", rect.B.describe()); // "B (1, 5)"
+console.log("Corner C:", rect.C.describe()); // "C (5, 5)"
+console.log("Corner D:", rect.D.describe()); // "D (5, 2)"
+
+console.log("Hight AB (expected 3):", rect.AB);
+console.log("Wide BC (expected 4):", rect.BC);
+
+console.log("Diagonale d (expected 5):", rect.diagonal());
+console.log("Circumference U (expected 14):", rect.circumference());
+console.log("Area A (expected 12):", rect.area());
