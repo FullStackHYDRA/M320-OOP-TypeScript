@@ -58,3 +58,11 @@ class Deck {
         }
     }
 };
+
+console.log("--- Whole Deck (52 Cards) ---");
+const fullDeck = new Deck(true);
+fullDeck.output();
+
+console.log("\n--- Reduced Deck / Jass (36 Cards) ---");
+const shortDeck = new Deck(false);
+shortDeck.output();
