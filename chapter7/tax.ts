@@ -12,3 +12,13 @@ export abstract class Tax {
         return remaining;
     }
 }
+
+export class FlatTax extends Tax {
+    constructor(private readonly flatAmount: number) {
+        super();
+    }
+
+    public override calculate(_x: number): number {
+        return this.flatAmount;
+    }
+}
