@@ -14,4 +14,11 @@ class RacePoints {
         this.system = system;
     }
 
+    public pointsFor(rank: number): number {
+        const pointsTable = this.system === "FIA" ? this.fiaPoints : this.fisPoints;
+        if (rank >= 1 && rank <= pointsTable.length) {
+            return pointsTable[rank - 1];
+        }
+        return 0;
+    }
 };
