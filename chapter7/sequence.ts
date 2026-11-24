@@ -22,3 +22,13 @@ export class Queue extends Sequence {
         return item;
     }
 }
+
+export class Stack extends Sequence {
+    public override get(): string {
+        const item = this.items.pop();
+        if (item === undefined) {
+            throw new Error("Stack ist leer.");
+        }
+        return item;
+    }
+}
