@@ -22,3 +22,13 @@ export class FlatTax extends Tax {
         return this.flatAmount;
     }
 }
+
+export class ProportionalTax extends Tax {
+    constructor(private readonly percentage: number) {
+        super();
+    }
+
+    public override calculate(x: number): number {
+        return x * (this.percentage / 100);
+    }
+}
